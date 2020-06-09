@@ -34,8 +34,8 @@ kramdown:
 #
 owner:
   name: Joshua
-  avatar: leonids-logo.png
-  job: "A page about me"
+  avatar: melogo
+  job: " "
   bio: "An aspiring individual finding and developing his interests in life."
   email:
   disqus-shortname:
