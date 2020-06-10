@@ -14,7 +14,7 @@ Research conducted under the supervision of Professor's under Polytechnique Mont
 
 <figure class="third">
 	<img src=" ">
-	<a href="/assets/img/handdrawing.png"><img src="/assets/img/handdrawing.png" height="200" width="155"></a>
+	<a href="/img/handdrawing.png"><img src="/img/handdrawing.png" height="200" width="155"></a>
 	<img src=" ">
 	<figcaption><center>Schematic Drawing of Exoskeleton Mechanism and Composition</center></figcaption>
 </figure>
@@ -25,7 +25,7 @@ The design of the Exoskeleton Hand comprises of significant components which are
 <br>
 <figure class="third">
 	<img src="">
-	<a href="/assets/img/adaptivehand.png"><img src="/assets/img/adaptivehand.png"></a>
+	<a href="/img/adaptivehand.png"><img src="/img/adaptivehand.png"></a>
 	<img src="">
 	<figcaption><center>Components Designed and Assembled on Catia v5</center></figcaption>
 </figure>
