@@ -25,7 +25,7 @@ The design of the Exoskeleton Hand comprises of significant components which are
 <br>
 <figure class="third">
 	<img src="">
-	<a href="/img/adaptivehand.png"><img src="/img/adaptivehand.png"></a>
+	<a href="/img/adaptivehand.png"><img src="/img/adaptivehand.png" height="400" width="200"></a>
 	<img src="">
 	<figcaption><center>Components Designed and Assembled on Catia v5</center></figcaption>
 </figure>
