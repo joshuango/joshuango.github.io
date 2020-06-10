@@ -14,7 +14,7 @@ Research conducted under the supervision of Professor's under Polytechnique Mont
 
 <figure>
   <img src="/img/handdrawing.png" class="center" height="300" width="200">
-  <figcaption>Schematic of device, listing key components of design to replicate functional and anatomical structures of the human hand</figcaption>
+  <figcaption>Fig 1. Schematic Drawing of Device</figcaption>
 </figure>
 
 The design of the Exoskeleton Hand comprises of significant components which are much similar to the human hand. Observing the human hand through its anatomical structure, each single component operates in harmony with other adjoining counterparts. For example, observing the phalange (finger), when taking hold of an object, intially the phalange moves in unison to create physical contact. Once there is contact, the "wrapping" notion of the proximal, medial and distal phalanges sequentially comform around the object to ensure an optimal grip. 
@@ -22,6 +22,6 @@ The design of the Exoskeleton Hand comprises of significant components which are
 <br>
 <figure>
   <img src="/img/adaptivehand.png" class="centre" height="300" width="200">
-  <figcaption>CAD assembly of all components on CATIA v6</figcaption>
+  <figcaption>Fig 2. Assembly of Device on Catia v6</figcaption>
 </figure>
 
