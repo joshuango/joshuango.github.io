@@ -1,2 +1,18 @@
 <h1><u><span data-i18n="skills.my_skills">Interests</span></u></h1>
 
+{% for interests in site.data.index.interests %}
+    <div class="row">
+            <div class="col">
+                <h3 style="margin: 0">{{ interest.name }}</h3>
+                <p style="margin: 0">{{ interest.descr }}</p>
+
+                {% if interest.github %}
+                <a href="{{ interest.github }} "><i class="fa fa-fw fa-github"></i>GitHub</a>
+                {% endif %}
+                {% if interest.website %}
+                <a href="{{ interest.website }} "><i class="fa fa-fw fa-home"></i>Homepage</a>
+                {% endif %}
+
+            </div>
+    </div>
+{% endfor %}
