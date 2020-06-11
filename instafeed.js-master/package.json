@@ -1,0 +1,34 @@
+{
+  "name": "instafeed.js",
+  "description": "A simple Instagram javascript plugin for your website.",
+  "version": "2.0.0-rc2",
+  "license": "MIT",
+  "homepage": "https://github.com/stevenschobert/instafeed.js",
+  "keywords": [
+    "instagram"
+  ],
+  "author": "Steven Schobert <spschobert@gmail.com> (https://stevenschobert.com)",
+  "contributors": [
+    "Ben Hull <ben@companionstudio.com.au>"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stevenschobert/instafeed.js.git"
+  },
+  "main": "./src/instafeed.js",
+  "scripts": {
+    "lint-src": "jshint --reporter ./node_modules/jshint-stylish src/**.js",
+    "lint-test": "jshint --reporter ./node_modules/jshint-stylish test/**.js",
+    "unit-test": "mocha -R spec test/",
+    "build-browser-test": "cp node_modules/mocha/mocha.{css,js} browser-test/ && browserify test/test.js > browser-test/test-bundle.js",
+    "build-dist": "node scripts/build-min.js src/instafeed.js dist/ && node scripts/print-file-size.js src/instafeed.js dist/instafeed.js dist/instafeed.min.js dist/instafeed.min.map",
+    "test": "npm run lint-src && npm run lint-test && npm run unit-test"
+  },
+  "devDependencies": {
+    "browserify": "^16.5.0",
+    "jshint": "^2.11.0",
+    "jshint-stylish": "^2.2.1",
+    "mocha": "^7.1.1",
+    "uglify-js": "^3.8.0"
+  }
+}
