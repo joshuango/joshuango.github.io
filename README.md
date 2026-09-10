@@ -1,38 +1,25 @@
-# Jekyll GitBook
+# Joshua Ngo — Photography Portfolio
 
-Make Jelly site have a GitBook look!
+Joshua Ngo is an image-first photography portfolio. The existing Markdown publishing system remains the source of truth: each file in `content/posts/` represents one photographic project, and the build step updates the home gallery, Work index, and individual project page together.
 
-## Demo
+## Add a photography project
 
-Live demo on Github Pages: [https://sighingnow.github.io/jekyll-gitbook](https://sighingnow.github.io/jekyll-gitbook)
+1. Duplicate a Markdown file in `content/posts/`.
+2. Replace the title, slug, project number, category, credits, hero image, and image descriptions.
+3. Put additional photographs under `## Gallery` using normal Markdown image syntax.
+4. Keep `## Overview` to one short paragraph; it is the only project description shown.
+5. Run `npm run build:posts`.
 
-[![Jekyll Themes](https://img.shields.io/badge/featured%20on-JekyllThemes-red.svg)](https://jekyll-themes.com/jekyll-gitbook/)
+The first published project by date becomes the full-screen home image. Its additional photographs and the remaining projects populate the home gallery automatically. Original longer notes can stay in Markdown without appearing on the image-led project page.
 
-## Why Jekyll with GitBook
+### Adding images
 
-GitBook is an amazing frontend style to present and organize contents (such as book chapters
-and blogs) on Web. The typical to deploy GitBook at [Github Pages][1]
-is building HTML files locally and then push to Github repository, usually to the `gh-pages`
-branch. It's quite annoying to repeat such workload and make it hard for people do version
-control via git for when there are generated HTML files to be staged in and out.
+Use this format on its own line:
 
-This theme takes style definition out of generated GitBook site and provided the template
-for Jekyll to rendering markdown documents to HTML, thus the whole site can be deployed
-to [Github Pages][1] without generating and uploading HTML bundle every time when there are
-changes to the original repo.
+```markdown
+![A useful description of the image](images/your-image.jpg)
+```
 
-## How to Get Started
+Images under Gallery form the alternating visual sequence. Images under Article are also included, allowing older Markdown files to keep working. Portrait and landscape photographs preserve their natural proportions.
 
-This theme can be used just as other [Jekyll themes][1].
-
-[Fork][3] this repository and add your markdown posts to the `_posts` folder.
-
-## License
-
-This work is open sourced under the Apache License, Version 2.0.
-
-Copyright 2019 Tao He.
-
-[1]: https://pages.github.com
-[2]: https://pages.github.com/themes
-[3]: https://github.com/sighingnow/jekyll-gitbook/fork
+While editing, run `npm run dev:posts` once. Every save refreshes the homepage, Work index, and project pages. When a project Markdown file is committed to `main`, the GitHub workflow rebuilds and publishes the portfolio automatically.
