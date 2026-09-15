@@ -66,7 +66,9 @@ a:focus-visible { outline: 2px solid currentColor; outline-offset: 5px; }
 .menu-open .menu-backdrop { opacity: 1; visibility: visible; }
 .menu-open .side-menu { transform: translateX(0); visibility: visible; }
 .menu-header { display: flex; justify-content: flex-end; font-size: 9px; text-transform: uppercase; letter-spacing: .15em; }
-.menu-close { padding: 0; border: 0; background: none; color: inherit; font: inherit; text-transform: uppercase; letter-spacing: inherit; cursor: pointer; }
+.menu-close { position: relative; width: 28px; height: 24px; padding: 0; border: 0; background: none; color: inherit; cursor: pointer; }
+.menu-close span { position: absolute; top: 12px; left: 1px; width: 26px; height: 1px; background: currentColor; transform: rotate(45deg); }
+.menu-close span:last-child { transform: rotate(-45deg); }
 .menu-nav { align-self: center; display: grid; }
 .menu-nav a { display: grid; grid-template-columns: 32px 1fr; align-items: start; padding: 11px 0; border-bottom: 1px solid var(--rule); font-family: var(--serif); font-size: clamp(44px, 5vw, 66px); line-height: .92; letter-spacing: -.055em; }
 .menu-nav a:first-child { border-top: 1px solid var(--rule); }
@@ -374,7 +376,7 @@ body { font-family: var(--sans); }
 .menu-button { width: 28px; }
 .menu-button span { width: 26px; }
 .menu-button span:last-child { width: 26px; }
-.side-menu { width: min(620px, 100vw); background: #292925; color: #f1f0eb; border-left-color: rgba(255,255,255,.14); }
+.side-menu { width: min(465px, 100vw); background: #292925; color: #f1f0eb; border-left-color: rgba(255,255,255,.14); }
 .menu-nav a { grid-template-columns: 42px 1fr; padding: 16px 0; border-color: rgba(255,255,255,.24); font-family: var(--sans); font-size: clamp(42px, 5.5vw, 82px); line-height: .9; letter-spacing: -.06em; }
 .menu-nav a span { padding-top: 6px; }
 
