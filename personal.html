@@ -3,13 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Personal photography by Joshua Ngo.">
+  <meta name="description" content="Personal photography by Joshua Ngo. Work in progress.">
   <meta property="og:title" content="Personal — Joshua Ngo">
-  <meta property="og:description" content="Personal observations of architecture, space, and place.">
+  <meta property="og:description" content="Work In Progress.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="https://joshuango.github.io/images/portfolio/museum-san.jpg">
   <title>Personal — Joshua Ngo</title>
-  <link rel="stylesheet" href="style.css?v=40">
+  <link rel="stylesheet" href="style.css?v=43">
 </head>
 <body class="personal-page">
   <a class="skip-link" href="#content">Skip to content</a>
@@ -31,22 +30,9 @@
     <footer class="menu-footer"><img class="instagram-mark" src="images/instagram.svg" alt="Instagram"></footer>
   </aside>
 
-  <main class="personal-main" id="content">
-    <header class="personal-intro">
-      <p>Portfolio / Personal</p>
-      <h1>Personal</h1>
-      <p>Observations of architecture, space, and place.</p>
-    </header>
-
-    <section class="personal-grid" aria-label="Personal photography">
-      <figure class="personal-image personal-image-wide reveal"><img src="images/portfolio/bar-8.jpg" alt="A softly lit bar interior with a mirrored ceiling"><figcaption><span>Bar 8</span><span>01</span></figcaption></figure>
-      <figure class="personal-image personal-image-left reveal"><img src="images/portfolio/museum-san.jpg" alt="Stone walls and trees seen through the tall windows of Museum SAN" loading="lazy"><figcaption><span>Museum SAN</span><span>02</span></figcaption></figure>
-      <figure class="personal-image personal-image-right reveal"><img src="images/portfolio/concrete-wall.jpg" alt="A concrete terrace framed by a mountain landscape" loading="lazy"><figcaption><span>Concrete Wall</span><span>03</span></figcaption></figure>
-      <figure class="personal-image personal-image-wide reveal"><img src="images/portfolio/songdo.jpg" alt="Songdo skyline reflected in a park lake" loading="lazy"><figcaption><span>Songdo</span><span>04</span></figcaption></figure>
-      <figure class="personal-image personal-image-left reveal"><img src="images/portfolio/yongsan-01.jpg" alt="A colonnade opening onto a green garden in Yongsan" loading="lazy"><figcaption><span>Yongsan</span><span>05</span></figcaption></figure>
-      <figure class="personal-image personal-image-right reveal"><img src="images/portfolio/yongsan-02.jpg" alt="A symmetrical stone memorial passage in Yongsan" loading="lazy"><figcaption><span>Yongsan</span><span>06</span></figcaption></figure>
-      <figure class="personal-image personal-image-portrait reveal"><img src="images/portfolio/yongsan-03.jpg" alt="A solitary figure crossing a monumental stone interior" loading="lazy"><figcaption><span>Yongsan</span><span>07</span></figcaption></figure>
-    </section>
+  <main class="about-main" id="content">
+    <h1 class="about-title">Personal</h1>
+    <p class="about-copy">Work In Progress.</p>
   </main>
 
   <footer class="site-footer"><p class="footer-brand">© 2026 Joshua Ngo</p></footer>
@@ -91,15 +77,6 @@
     menuBackdrop.addEventListener('click', () => setMenu(false));
     sideMenu.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => setMenu(false)));
     document.addEventListener('keydown', (event) => { if (event.key === 'Escape') setMenu(false); });
-    const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          revealObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: .08, rootMargin: '0px 0px -8% 0px' });
-    document.querySelectorAll('.reveal').forEach((item) => revealObserver.observe(item));
     window.addEventListener('scroll', () => {
       if (!ticking) { requestAnimationFrame(updateScroll); ticking = true; }
     }, { passive: true });

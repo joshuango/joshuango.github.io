@@ -259,17 +259,17 @@ a:focus-visible { outline: 2px solid currentColor; outline-offset: 5px; }
 .inspiration-empty { grid-column: 1 / -1; min-height: 52svh; display: grid; place-items: center; font-family: var(--serif); font-size: clamp(26px, 3vw, 48px); }
 .about-copy { max-width: 29ch; font-family: var(--serif); font-size: clamp(18px, 1.6vw, 24px); line-height: 1.45; }
 
-.about-page .about-main {
+.about-page .about-main, .personal-page .about-main {
   position: relative; min-height: 100svh; display: grid; grid-template-columns: 1fr;
   place-items: center; gap: 0; padding: 0 var(--gutter);
 }
-.about-page .about-title {
+.about-page .about-title, .personal-page .about-title {
   position: absolute; top: calc(var(--header-h) + 42px); left: 50%;
   transform: translateX(-50%); white-space: nowrap;
   font-family: var(--sans); font-size: 10px; font-weight: 400; line-height: 1;
   letter-spacing: .16em; text-transform: uppercase;
 }
-.about-page .about-copy {
+.about-page .about-copy, .personal-page .about-copy {
   align-self: center; justify-self: center; max-width: 34ch; margin: 0 auto;
   text-align: center; font-size: clamp(20px, 2vw, 30px);
 }
@@ -300,9 +300,9 @@ a:focus-visible { outline: 2px solid currentColor; outline-offset: 5px; }
   .inspiration-main { padding: calc(var(--header-h) + 38px) 20px 100px; }
   .inspiration-grid { gap: 80px 14px; padding-top: 64px; }
   .about-copy { justify-self: end; }
-  .about-page .about-main { padding: 0 20px; }
-  .about-page .about-title { top: calc(var(--header-h) + 30px); font-size: 9px; }
-  .about-page .about-copy { justify-self: center; }
+  .about-page .about-main, .personal-page .about-main { padding: 0 20px; }
+  .about-page .about-title, .personal-page .about-title { top: calc(var(--header-h) + 30px); font-size: 9px; }
+  .about-page .about-copy, .personal-page .about-copy { justify-self: center; }
   .study-archive { padding: calc(var(--header-h) + 38px) 20px 100px; }
   .article-grid { grid-template-columns: 1fr; gap: 96px; padding-top: 64px; }
   .article-card h2 { font-size: clamp(38px, 11vw, 64px); }
@@ -418,7 +418,7 @@ body { font-family: var(--sans); }
 .article-facts dd, .article-overview-copy p { font-family: var(--sans); }
 .site-footer { min-height: 20svh; align-content: end; }
 .footer-brand { font-family: var(--sans); font-size: clamp(46px, 7vw, 112px); line-height: .75; letter-spacing: -.07em; }
-.about-page .about-copy { max-width: 42ch; font-family: var(--sans); font-size: clamp(22px, 3vw, 48px); line-height: 1.12; letter-spacing: -.045em; }
+.about-page .about-copy, .personal-page .about-copy { max-width: 42ch; font-family: var(--sans); font-size: clamp(22px, 3vw, 48px); line-height: 1.12; letter-spacing: -.045em; }
 
 @media (max-width: 800px) {
   :root { --header-h: 72px; }
