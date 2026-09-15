@@ -546,6 +546,16 @@ body { font-family: var(--sans); }
   border-color: rgba(255,255,255,.14);
   backdrop-filter: blur(10px);
 }
+.home-page .wordmark,
+.home-page .site-header.is-compact .wordmark {
+  top: 50%;
+  left: 50%;
+  font-size: 14px;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  transform-origin: center;
+}
+.home-page .header-note { display: none; }
 .home-page .scroll-progress { background: #fff; }
 .home-slideshow { position: relative; height: 100svh; min-height: 620px; overflow: hidden; background: #292925; color: #fff; }
 .home-slides, .home-slide { position: absolute; inset: 0; }
@@ -562,8 +572,9 @@ body { font-family: var(--sans); }
 .home-slide-ui { position: absolute; right: var(--gutter); bottom: 24px; left: var(--gutter); z-index: 4; display: flex; justify-content: center; pointer-events: none; font-size: 8px; letter-spacing: .13em; text-transform: uppercase; }
 .home-slide-counter { font-variant-numeric: tabular-nums; }
 
-.home-page .site-footer { min-height: 110px; align-content: end; padding-block: 28px; background: #292925; color: rgba(255,255,255,.78); border-color: rgba(255,255,255,.14); }
+.home-page .site-footer { min-height: 110px; grid-template-columns: 1fr auto; align-content: end; align-items: end; padding-block: 28px; background: #292925; color: rgba(255,255,255,.78); border-color: rgba(255,255,255,.14); }
 .footer-brand { font-family: var(--sans); font-size: 8px; font-weight: 400; line-height: 1; letter-spacing: .14em; text-transform: uppercase; }
+.footer-instagram { display: block; width: 16px; height: 16px; filter: invert(1); }
 
 @media (max-width: 800px) {
   .home-slideshow { min-height: 540px; }
