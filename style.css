@@ -535,9 +535,13 @@ body { font-family: var(--sans); }
 }
 
 /* Full-screen photographic opening */
-.home-page .site-header,
-.home-page .site-header.is-compact {
+.home-page .site-header {
   color: #fff;
+  background: transparent;
+  border-color: transparent;
+  backdrop-filter: none;
+}
+.home-page .site-header.is-compact {
   background: rgba(41, 41, 37, .96);
   border-color: rgba(255,255,255,.14);
   backdrop-filter: blur(10px);
