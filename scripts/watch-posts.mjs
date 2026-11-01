@@ -1,0 +1,10 @@
+import fs from 'node:fs';
+import { spawnSync } from 'node:child_process';
+import { fileURLToPath } from 'node:url';
+const build = fileURLToPath(new URL('./build-posts.mjs', import.meta.url));
+const posts = fileURLToPath(new URL('../content/posts/', import.meta.url));
+let timer;
+const run = () => spawnSync(process.execPath, [build], { stdio: 'inherit' });
+run();
+fs.watch(posts, () => { clearTimeout(timer); timer = setTimeout(run, 150); });
+console.log('Watching article Markdown files for changes.');
