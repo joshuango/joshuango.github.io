@@ -236,7 +236,7 @@ function renderGallery(post) {
     .filter((image) => !seen.has(image.src) && seen.add(image.src));
   if (!images.length) return '';
   return `      <div class="portfolio-sequence" aria-label="Project photographs">
-${images.map((image, index) => `        <figure class="portfolio-sequence-image portfolio-sequence-image-${index % 3} article-reveal"><img src="${escapeHtml(image.src)}" alt="${escapeHtml(image.alt)}"></figure>`).join('\n')}
+${images.map((image, index) => `        <figure class="portfolio-sequence-image portfolio-sequence-image-${index % 3} article-reveal"><img src="${escapeHtml(image.src)}" alt="${escapeHtml(image.alt)}" loading="lazy" decoding="async"></figure>`).join('\n')}
       </div>`;
 }
 

@@ -42,3 +42,6 @@
   .editorial-image { margin-block: 36px; }
 }
 .editorial-page .article-reveal { clip-path: none; }
+
+/* Preserve the complete frame in photographic project sequences. */
+.editorial-project .portfolio-sequence-image img { max-height: none; height: auto; object-fit: contain; }

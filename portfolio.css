@@ -1,0 +1,10 @@
+.gitti-portfolio { padding: calc(var(--header-h) + 70px) var(--gutter) 100px; }
+.gitti-portfolio-heading { padding-bottom: 48px; }
+.gitti-portfolio-heading p { font-size: 10px; text-transform: uppercase; letter-spacing: .12em; margin-bottom: 22px; }
+.gitti-portfolio-heading h1 { font-size: clamp(56px, 10vw, 130px); font-weight: 400; letter-spacing: -.055em; line-height: 1; }
+.gitti-project-card { max-width: 1400px; }
+.gitti-project-card img { display: block; width: 100%; height: auto; }
+.gitti-project-caption { display: flex; justify-content: space-between; align-items: baseline; gap: 20px; padding-top: 18px; }
+.gitti-project-caption h2 { font-family: var(--serif); font-size: clamp(28px, 4vw, 48px); font-weight: 400; }
+.gitti-project-caption span { font-size: 10px; text-transform: uppercase; letter-spacing: .08em; }
+@media (max-width: 600px) { .gitti-portfolio { padding-top: calc(var(--header-h) + 45px); } .gitti-project-caption { align-items: start; flex-direction: column; gap: 10px; } }
