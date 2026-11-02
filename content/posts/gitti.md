@@ -2,6 +2,7 @@
 title: Gitti
 slug: gitti
 type: project
+layout: photographs
 number: 01
 date: 2026-11-02
 category: Architecture

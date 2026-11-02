@@ -353,7 +353,7 @@ for (const post of posts) {
     TOPICS: renderTopicLinks(post),
     RELATED: renderRelated(post, posts),
   };
-  fs.writeFileSync(path.join(siteDir, `${post.slug}.html`), replaceTokens(articleTemplate, values));
+  fs.writeFileSync(path.join(siteDir, `${post.slug}.html`), replaceTokens(post.layout === 'photographs' ? fs.readFileSync(path.join(templatesDir, 'photographs.html'), 'utf8') : articleTemplate, values));
 }
 
 buildTopics(posts);
