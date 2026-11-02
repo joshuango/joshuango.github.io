@@ -8,6 +8,9 @@ date: 2026-11-02
 category: Architecture
 topics: Architecture, Interiors
 photography: Joshua Ngo
+location: Gyeongju, South Korea
+client: Softer Volumes
+year: 2025
 excerpt: Gitti — a photographic series by Joshua Ngo.
 hero: images/gitti/dscf1916.jpg
 heroAlt: Gitti exterior with concrete walls, a dark roof and a passing car

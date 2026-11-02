@@ -47,6 +47,14 @@
       body.editorial-project .portfolio-sequence .portfolio-sequence-image:nth-child(even) { width: 76%; margin-left: auto; }
       body.editorial-project .portfolio-sequence .portfolio-sequence-image:nth-child(3n) { width: 84%; margin-inline: auto; }
     }
+  
+    .project-info { position: fixed; left: var(--gutter); bottom: 28px; z-index: 20; max-width: 300px; padding: 16px 18px; background: rgba(248,247,243,.9); backdrop-filter: blur(10px); color: var(--ink); opacity: 0; visibility: hidden; transform: translateY(18px); transition: opacity .4s ease, transform .55s cubic-bezier(.22,1,.36,1), visibility .55s; }
+    .project-info h2 { margin: 0 0 8px; font-family: var(--serif); font-size: 21px; font-weight: 400; line-height: 1.2; }
+    .project-info p { margin: 0; font-size: 11px; line-height: 1.7; }
+    .project-info.is-visible { opacity: 1; visibility: visible; transform: translateY(0); }
+    body.menu-open .project-info { opacity: 0; visibility: hidden; }
+    @media (max-width: 600px) { .project-info { left: 20px; bottom: 20px; max-width: calc(100vw - 70px); padding: 12px 14px; } .project-info h2 { font-size: 18px; } .project-info p { font-size: 10px; } }
+    @media (prefers-reduced-motion: reduce) { .project-info { transition: none; transform: none; } }
   </style>
 </head>
 <body class="article-page editorial-page editorial-project">
@@ -109,6 +117,13 @@
     </article>
   </main>
 
+  <aside class="project-info" id="projectInfo" aria-label="Project details" aria-hidden="true">
+    <h2>Gitti</h2>
+    <p>Located in: Gyeongju, South Korea</p>
+    <p>Photography: Joshua Ngo for Softer Volumes</p>
+    <p>Year: 2025</p>
+  </aside>
+
   <footer class="site-footer"><p class="footer-brand">© 2026 Joshua Ngo</p></footer>
   <a class="floating-top" id="floatingTop" href="#content" aria-label="Back to top"><span aria-hidden="true">↑</span></a>
 
@@ -121,6 +136,8 @@
     const sideMenu = document.getElementById('sideMenu');
     const floatingTop = document.getElementById('floatingTop');
     const localTime = document.getElementById('localTime');
+    const projectInfo = document.getElementById('projectInfo');
+    const projectTitle = document.querySelector('.article-masthead h1');
     let ticking = false;
 
     function setMenu(open) {
@@ -143,6 +160,11 @@
       root.style.setProperty('--progress', max > 0 ? y / max : 0);
       header.classList.toggle('is-compact', y > 40);
       floatingTop.classList.toggle('is-visible', y > window.innerHeight * .55);
+      if (projectInfo && projectTitle) {
+        const showInfo = projectTitle.getBoundingClientRect().bottom < header.getBoundingClientRect().bottom;
+        projectInfo.classList.toggle('is-visible', showInfo);
+        projectInfo.setAttribute('aria-hidden', String(!showInfo));
+      }
       ticking = false;
     }
 
@@ -163,6 +185,7 @@
     window.addEventListener('scroll', () => {
       if (!ticking) { requestAnimationFrame(updateScroll); ticking = true; }
     }, { passive: true });
+    window.addEventListener('resize', updateScroll, { passive: true });
     updateLocalDateTime();
     window.setInterval(updateLocalDateTime, 1000);
     updateScroll();

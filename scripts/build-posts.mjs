@@ -311,6 +311,17 @@ function buildTopics(posts) {
   fs.writeFileSync(path.join(siteDir, 'topics.html'), replaceTokens(template, { TITLE: 'Topics', TOPIC_LINKS: links || '<p>New stories and collections will appear here.</p>', POST_CARDS: '' }));
 }
 
+function renderProjectInfo(post) {
+  if (!post.location && !post.client && !post.year) return '';
+  const photography = [post.photography, post.client ? 'for ' + post.client : ''].filter(Boolean).join(' ');
+  return `<aside class="project-info" id="projectInfo" aria-label="Project details" aria-hidden="true">
+    <h2>${escapeHtml(post.title)}</h2>
+    ${post.location ? '<p>Located in: ' + escapeHtml(post.location) + '</p>' : ''}
+    ${photography ? '<p>Photography: ' + escapeHtml(photography) + '</p>' : ''}
+    ${post.year ? '<p>Year: ' + escapeHtml(post.year) + '</p>' : ''}
+  </aside>`;
+}
+
 const postFiles = fs.readdirSync(postsDir)
   .filter((filename) => filename.endsWith('.md') && !filename.startsWith('_'));
 const posts = postFiles.map(parsePost)
@@ -331,6 +342,7 @@ fs.writeFileSync(path.join(siteDir, 'study.html'), replaceTokens(studyTemplate, 
 const articleTemplate = fs.readFileSync(path.join(templatesDir, 'article.html'), 'utf8');
 for (const post of posts) {
   const values = {
+    PROJECT_INFO: renderProjectInfo(post),
     TITLE: escapeHtml(post.title),
     SLUG: escapeHtml(post.slug),
     NUMBER: escapeHtml(post.number),
