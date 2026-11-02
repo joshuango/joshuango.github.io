@@ -636,3 +636,9 @@ body { font-family: var(--sans); }
   .personal-image, .personal-image:nth-child(n) { width: 100%; margin: 0 0 84px; padding-top: 0; }
   .personal-image-portrait { width: 78%; margin-left: auto; }
 }
+
+/* Homepage alignment and slideshow counter. */
+.home-page .site-header .wordmark { left: var(--gutter); transform: none; display: flex; gap: .25em; white-space: nowrap; }
+.home-page .home-slide-counter { display: none; }
+
+.home-page .site-header.is-compact .wordmark { left: var(--gutter); transform: none; }
