@@ -25,6 +25,8 @@ jobs:
         with:
           source: ./
           destination: ./_site
+      - name: Apply shared website interactions
+        run: node scripts/finalize-site.mjs
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./_site
