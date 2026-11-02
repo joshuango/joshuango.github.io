@@ -9,7 +9,7 @@
   <meta property="og:type" content="article">
   
   <title>Gitti — Joshua Ngo</title>
-  <link rel="stylesheet" href="style.css?v=45">
+  <link rel="stylesheet" href="style.css?v=46">
   <link rel="stylesheet" href="editorial.css?v=3">
   <style>
     body.editorial-project .article-masthead { padding: 36px var(--gutter) 32px; }
@@ -23,6 +23,29 @@
       body.editorial-project .portfolio-sequence { grid-template-columns: 1fr; padding-inline: 9vw; gap: 90px; }
       body.editorial-project .portfolio-sequence .portfolio-sequence-image img { max-height: 66svh; }
       body.editorial-project .article-lead { padding-inline: 9vw; }
+    }
+  
+    /* An authored sequence: balanced asymmetry, stable on every visit. */
+    body.editorial-project .portfolio-sequence { grid-template-columns: repeat(12, minmax(0, 1fr)); max-width: 1240px; column-gap: clamp(18px, 3vw, 40px); }
+    body.editorial-project .portfolio-sequence .portfolio-sequence-image:nth-child(1) { grid-area: 1 / 2 / 2 / 6; }
+    body.editorial-project .portfolio-sequence .portfolio-sequence-image:nth-child(2) { grid-area: 1 / 8 / 2 / 12; margin-top: 110px; }
+    body.editorial-project .portfolio-sequence .portfolio-sequence-image:nth-child(3) { grid-area: 2 / 5 / 3 / 10; }
+    body.editorial-project .portfolio-sequence .portfolio-sequence-image:nth-child(4) { grid-area: 3 / 1 / 4 / 5; }
+    body.editorial-project .portfolio-sequence .portfolio-sequence-image:nth-child(5) { grid-area: 3 / 7 / 4 / 12; margin-top: 100px; }
+    body.editorial-project .portfolio-sequence .portfolio-sequence-image:nth-child(6) { grid-area: 4 / 3 / 5 / 7; }
+    body.editorial-project .portfolio-sequence .portfolio-sequence-image:nth-child(7) { grid-area: 4 / 9 / 5 / 13; margin-top: 80px; }
+    body.editorial-project .portfolio-sequence .portfolio-sequence-image:nth-child(8) { grid-area: 5 / 6 / 6 / 10; }
+    body.editorial-project .portfolio-sequence .portfolio-sequence-image:nth-child(9) { grid-area: 6 / 2 / 7 / 7; }
+    body.editorial-project .portfolio-sequence .portfolio-sequence-image:nth-child(10) { grid-area: 6 / 9 / 7 / 12; margin-top: 90px; }
+    body.editorial-project .portfolio-sequence .portfolio-sequence-image:nth-child(11) { grid-area: 7 / 4 / 8 / 8; }
+    body.editorial-project .portfolio-sequence .portfolio-sequence-image:nth-child(12) { grid-area: 8 / 1 / 9 / 5; }
+    body.editorial-project .portfolio-sequence .portfolio-sequence-image:nth-child(13) { grid-area: 8 / 7 / 9 / 13; margin-top: 120px; }
+    body.editorial-project .portfolio-sequence .portfolio-sequence-image:nth-child(3n) img { max-height: min(52svh, 520px); }
+    @media (max-width: 600px) {
+      body.editorial-project .portfolio-sequence { grid-template-columns: 1fr; }
+      body.editorial-project .portfolio-sequence .portfolio-sequence-image:nth-child(n) { grid-area: auto; margin: 0; width: 92%; }
+      body.editorial-project .portfolio-sequence .portfolio-sequence-image:nth-child(even) { width: 76%; margin-left: auto; }
+      body.editorial-project .portfolio-sequence .portfolio-sequence-image:nth-child(3n) { width: 84%; margin-inline: auto; }
     }
   </style>
 </head>

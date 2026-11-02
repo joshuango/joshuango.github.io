@@ -642,3 +642,9 @@ body { font-family: var(--sans); }
 .home-page .home-slide-counter { display: none; }
 
 .home-page .site-header.is-compact .wordmark { left: var(--gutter); transform: none; }
+
+/* Keep the identity stationary and consistent on every page. */
+.site-header .wordmark, .site-header.is-compact .wordmark {
+  top: 22px; left: var(--gutter); transform: none; display: flex;
+  gap: .25em; white-space: nowrap; transition: none;
+}
