@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Mokki — photographs by Joshua Ngo for Softer Volumes.">
+  <meta property="og:title" content="Mokki — Joshua Ngo">
+  <meta property="og:description" content="Mokki — photographs by Joshua Ngo for Softer Volumes.">
+  <meta property="og:type" content="article">
+  
+  <title>Mokki — Joshua Ngo</title>
+  <link rel="stylesheet" href="style.css?v=46">
+  <link rel="stylesheet" href="editorial.css?v=3">
+  <style>
+    body.editorial-project .article-main { padding-top: calc(var(--header-h) + clamp(40px, 6vw, 80px)); }
+    body.editorial-project .article-masthead { padding: 36px var(--gutter) 32px; }
+    body.editorial-project .article-masthead h1 { margin: 12px auto; font-size: clamp(32px, 4vw, 54px); }
+    body.editorial-project .article-lead { display: flex; justify-content: center; max-width: 1100px; padding: 0 8vw; margin: 0 auto; }
+    body.editorial-project .article-lead img { width: auto; height: auto; max-width: 100%; max-height: min(58svh, 620px); object-fit: contain; }
+    body.editorial-project .portfolio-sequence { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: center; gap: clamp(96px, 14vw, 180px) clamp(36px, 7vw, 100px); max-width: 1120px; margin: 0 auto; padding: clamp(96px, 14vw, 180px) 7vw; }
+    body.editorial-project .portfolio-sequence .portfolio-sequence-image { grid-column: auto; width: 100%; margin: 0; padding: 0; display: flex; justify-content: center; background: transparent; overflow: visible; }
+    body.editorial-project .portfolio-sequence .portfolio-sequence-image img { display: block; width: auto; height: auto; max-width: 100%; max-height: min(62svh, 620px); object-fit: contain; }
+    @media (max-width: 600px) {
+      body.editorial-project .portfolio-sequence { grid-template-columns: 1fr; padding-inline: 9vw; gap: 90px; }
+      body.editorial-project .portfolio-sequence .portfolio-sequence-image img { max-height: 66svh; }
+      body.editorial-project .article-lead { padding-inline: 9vw; }
+    }
+  
+    /* An authored sequence: balanced asymmetry, stable on every visit. */
+    body.editorial-project .portfolio-sequence { grid-template-columns: repeat(12, minmax(0, 1fr)); max-width: 1240px; column-gap: clamp(18px, 3vw, 40px); }
+    body.editorial-project .portfolio-sequence .portfolio-sequence-image:nth-child(1) { grid-area: 1 / 1 / 2 / 4; margin-top: 0px; }
+    body.editorial-project .portfolio-sequence .portfolio-sequence-image:nth-child(2) { grid-area: 1 / 5 / 2 / 9; margin-top: 90px; }
+    body.editorial-project .portfolio-sequence .portfolio-sequence-image:nth-child(3) { grid-area: 1 / 10 / 2 / 13; margin-top: 25px; }
+    body.editorial-project .portfolio-sequence .portfolio-sequence-image:nth-child(4) { grid-area: 2 / 5 / 3 / 10; margin-top: 0px; }
+    body.editorial-project .portfolio-sequence .portfolio-sequence-image:nth-child(5) { grid-area: 3 / 1 / 4 / 5; margin-top: 0px; }
+    body.editorial-project .portfolio-sequence .portfolio-sequence-image:nth-child(6) { grid-area: 3 / 8 / 4 / 12; margin-top: 90px; }
+    body.editorial-project .portfolio-sequence .portfolio-sequence-image:nth-child(7) { grid-area: 4 / 2 / 5 / 5; margin-top: 90px; }
+    body.editorial-project .portfolio-sequence .portfolio-sequence-image:nth-child(8) { grid-area: 4 / 6 / 5 / 9; margin-top: 0px; }
+    body.editorial-project .portfolio-sequence .portfolio-sequence-image:nth-child(9) { grid-area: 4 / 10 / 5 / 13; margin-top: 60px; }
+    body.editorial-project .portfolio-sequence .portfolio-sequence-image:nth-child(10) { grid-area: 5 / 3 / 6 / 11; margin-top: 0px; }
+    body.editorial-project .portfolio-sequence .portfolio-sequence-image:nth-child(11) { grid-area: 6 / 2 / 7 / 6; margin-top: 0px; }
+    body.editorial-project .portfolio-sequence .portfolio-sequence-image:nth-child(12) { grid-area: 6 / 8 / 7 / 12; margin-top: 80px; }
+    body.editorial-project .portfolio-sequence .portfolio-sequence-image:nth-child(13) { grid-area: 7 / 6 / 8 / 10; margin-top: 0px; }
+    body.editorial-project .portfolio-sequence .portfolio-sequence-image:nth-child(14) { grid-area: 8 / 1 / 9 / 4; margin-top: 40px; }
+    body.editorial-project .portfolio-sequence .portfolio-sequence-image:nth-child(15) { grid-area: 8 / 5 / 9 / 9; margin-top: 100px; }
+    body.editorial-project .portfolio-sequence .portfolio-sequence-image:nth-child(16) { grid-area: 8 / 10 / 9 / 13; margin-top: 0; }
+    body.editorial-project .portfolio-sequence .portfolio-sequence-image:nth-child(17) { grid-area: 9 / 3 / 10 / 11; margin-top: 0; }
+    body.editorial-project .portfolio-sequence .portfolio-sequence-image:nth-child(3n) img { max-height: min(52svh, 520px); }
+    @media (max-width: 600px) {
+      body.editorial-project .portfolio-sequence { grid-template-columns: 1fr; }
+      body.editorial-project .portfolio-sequence .portfolio-sequence-image:nth-child(n) { grid-area: auto; margin: 0; width: 92%; }
+      body.editorial-project .portfolio-sequence .portfolio-sequence-image:nth-child(even) { width: 76%; margin-left: auto; }
+      body.editorial-project .portfolio-sequence .portfolio-sequence-image:nth-child(3n) { width: 84%; margin-inline: auto; }
+    }
+  
+    .project-info { position: fixed; left: var(--gutter); bottom: calc(var(--project-info-bottom, 28px) + var(--project-info-lift, 0px)); z-index: 20; max-width: 300px; padding: 16px 18px; background: rgba(248,247,243,.55); -webkit-backdrop-filter: blur(14px) saturate(110%); backdrop-filter: blur(14px) saturate(110%); border: 1px solid rgba(255,255,255,.28); border-radius: 8px; box-shadow: 0 2px 12px rgba(23,23,20,.035); color: var(--ink); opacity: 0; visibility: hidden; transform: translateY(18px); transition: opacity .4s ease, transform .55s cubic-bezier(.22,1,.36,1), visibility .55s; }
+    .project-info h2 { margin: 0 0 8px; font-family: var(--serif); font-size: 21px; font-weight: 400; line-height: 1.2; }
+    .project-info p { margin: 0; font-size: 11px; line-height: 1.7; }
+    .project-info.is-visible { opacity: 1; visibility: visible; transform: translateY(0); }
+    body.menu-open .project-info { opacity: 0; visibility: hidden; }
+    @media (max-width: 600px) { .project-info { left: 20px; --project-info-bottom: 20px; max-width: calc(100vw - 70px); padding: 12px 14px; } .project-info h2 { font-size: 18px; } .project-info p { font-size: 10px; } }
+    @media (prefers-reduced-motion: reduce) { .project-info { transition: none; transform: none; } }
+  </style>
+  <script defer src="/site-interactions.js?v=1"></script>
+</head>
+<body class="article-page editorial-page editorial-project">
+  <a class="skip-link" href="#content">Skip to content</a>
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <header class="site-header" id="siteHeader">
+    <a class="wordmark" href="index.html" aria-label="Joshua Ngo, home"><span>Joshua</span><span>Ngo</span></a>
+    <p class="header-note" aria-label="Visitor local time"><span id="localTime"></span></p>
+    <button class="menu-button" id="menuButton" type="button" aria-expanded="false" aria-controls="sideMenu" aria-label="Open menu"><span></span><span></span></button>
+  </header>
+
+  <div class="menu-backdrop" id="menuBackdrop" aria-hidden="true"></div>
+  <aside class="side-menu" id="sideMenu" aria-hidden="true" aria-label="Site menu">
+    <header class="menu-header"><button class="menu-close" id="menuClose" type="button" aria-label="Close menu"><span aria-hidden="true"></span><span aria-hidden="true"></span></button></header>
+    <nav class="menu-nav" aria-label="Menu navigation">
+      <a class="menu-primary" href="personal.html">Portfolio</a>
+      <a class="menu-primary" href="about.html">About</a>
+    </nav>
+    <footer class="menu-footer"><img class="instagram-mark" src="images/instagram.svg" alt="Instagram"></footer>
+  </aside>
+
+  <main class="article-main" id="content">
+    <article>
+
+      <figure class="article-lead article-reveal">
+        <img src="images/mokki/dscf7318-1.jpg" alt="A large paper pendant reflected in Mokki&#039;s communal table">
+      </figure>
+
+
+<div class="editorial-body"></div>
+
+
+
+      <div class="portfolio-sequence" aria-label="Project photographs">
+        <figure class="portfolio-sequence-image portfolio-sequence-image-0 article-reveal"><img src="images/mokki/dscf7509.jpg" alt="A staff member preparing a drink beside a softly glowing table lamp" loading="lazy" decoding="async"></figure>
+        <figure class="portfolio-sequence-image portfolio-sequence-image-1 article-reveal"><img src="images/mokki/dscf7364-1.jpg" alt="A round paper pendant above a black table against a quiet white wall" loading="lazy" decoding="async"></figure>
+        <figure class="portfolio-sequence-image portfolio-sequence-image-2 article-reveal"><img src="images/mokki/dscf7564.jpg" alt="A slice of cake and a dark cup on a black timber table" loading="lazy" decoding="async"></figure>
+        <figure class="portfolio-sequence-image portfolio-sequence-image-0 article-reveal"><img src="images/mokki/dscf7370.jpg" alt="Mokki&#039;s service counter framed by a large paper pendant" loading="lazy" decoding="async"></figure>
+        <figure class="portfolio-sequence-image portfolio-sequence-image-1 article-reveal"><img src="images/mokki/dscf7780.jpg" alt="A dessert in a dark bowl on a black tray" loading="lazy" decoding="async"></figure>
+        <figure class="portfolio-sequence-image portfolio-sequence-image-2 article-reveal"><img src="images/mokki/dscf7313.jpg" alt="Long black communal tables beneath timber roof beams and a paper pendant at Mokki" loading="lazy" decoding="async"></figure>
+        <figure class="portfolio-sequence-image portfolio-sequence-image-0 article-reveal"><img src="images/mokki/dscf7752.jpg" alt="A slice of cake near an exposed concrete column and paper pendant" loading="lazy" decoding="async"></figure>
+        <figure class="portfolio-sequence-image portfolio-sequence-image-1 article-reveal"><img src="images/mokki/dscf7524.jpg" alt="A staff member pouring a drink behind Mokki&#039;s counter" loading="lazy" decoding="async"></figure>
+        <figure class="portfolio-sequence-image portfolio-sequence-image-2 article-reveal"><img src="images/mokki/dscf7476.jpg" alt="A cold drink on the edge of a long table beneath a paper pendant" loading="lazy" decoding="async"></figure>
+        <figure class="portfolio-sequence-image portfolio-sequence-image-0 article-reveal"><img src="images/mokki/dscf7348.jpg" alt="A view along Mokki&#039;s long table toward the service counter" loading="lazy" decoding="async"></figure>
+        <figure class="portfolio-sequence-image portfolio-sequence-image-1 article-reveal"><img src="images/mokki/dscf7795.jpg" alt="An overhead view of a dessert tray with a spoon and small side dishes" loading="lazy" decoding="async"></figure>
+        <figure class="portfolio-sequence-image portfolio-sequence-image-2 article-reveal"><img src="images/mokki/dscf7614-2.jpg" alt="Black stools and communal tables beneath exposed timber trusses" loading="lazy" decoding="async"></figure>
+        <figure class="portfolio-sequence-image portfolio-sequence-image-0 article-reveal"><img src="images/mokki/dscf7473.jpg" alt="Shelves and coffee equipment behind the light timber counter" loading="lazy" decoding="async"></figure>
+        <figure class="portfolio-sequence-image portfolio-sequence-image-1 article-reveal"><img src="images/mokki/dscf7685.jpg" alt="A round paper pendant reflected in the polished communal table" loading="lazy" decoding="async"></figure>
+        <figure class="portfolio-sequence-image portfolio-sequence-image-2 article-reveal"><img src="images/mokki/dscf7327.jpg" alt="A paper pendant beside exposed concrete and a softly illuminated counter" loading="lazy" decoding="async"></figure>
+        <figure class="portfolio-sequence-image portfolio-sequence-image-0 article-reveal"><img src="images/mokki/dscf7413-1.jpg" alt="A staff member at the counter beyond Mokki&#039;s communal table" loading="lazy" decoding="async"></figure>
+        <figure class="portfolio-sequence-image portfolio-sequence-image-1 article-reveal"><img src="images/mokki/dscf7369-1.jpg" alt="A paper pendant and exposed concrete column reflected in a black tabletop" loading="lazy" decoding="async"></figure>
+      </div>
+
+
+
+    </article>
+  </main>
+
+  <aside class="project-info" id="projectInfo" aria-label="Project details" aria-hidden="true">
+    <h2>Mokki</h2>
+    <p>Seoul, South Korea</p>
+    <p>Photographed for Softer Volumes: South Korea Guide</p>
+    <p>2025</p>
+  </aside>
+
+  <footer class="site-footer"><p class="footer-brand">© 2026 Joshua Ngo</p></footer>
+  <a class="floating-top" id="floatingTop" href="#content" aria-label="Back to top"><span aria-hidden="true">↑</span></a>
+
+  <script>
+    const root = document.documentElement;
+    const header = document.getElementById('siteHeader');
+    const menuButton = document.getElementById('menuButton');
+    const menuClose = document.getElementById('menuClose');
+    const menuBackdrop = document.getElementById('menuBackdrop');
+    const sideMenu = document.getElementById('sideMenu');
+    const floatingTop = document.getElementById('floatingTop');
+    const localTime = document.getElementById('localTime');
+    const projectInfo = document.getElementById('projectInfo');
+    const projectLead = document.querySelector('.article-lead img');
+    const projectImages = Array.from(document.querySelectorAll('.article-lead img, .portfolio-sequence img'));
+    const lastProjectImage = projectImages.at(-1);
+    let ticking = false;
+
+    function setMenu(open) {
+      document.body.classList.toggle('menu-open', open);
+      menuButton.setAttribute('aria-expanded', String(open));
+      menuButton.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      sideMenu.setAttribute('aria-hidden', String(!open));
+      menuBackdrop.setAttribute('aria-hidden', String(!open));
+      if (open) menuClose.focus();
+      else if (document.activeElement === menuClose) menuButton.focus();
+    }
+
+    function updateLocalDateTime() {
+      localTime.textContent = new Intl.DateTimeFormat(undefined, { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false }).format(new Date());
+    }
+
+    function updateScroll() {
+      const y = window.scrollY;
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      root.style.setProperty('--progress', max > 0 ? y / max : 0);
+      header.classList.toggle('is-compact', y > 40);
+      floatingTop.classList.toggle('is-visible', y > window.innerHeight * .55);
+      if (projectInfo) {
+        const bottomInset = parseFloat(getComputedStyle(projectInfo).getPropertyValue('--project-info-bottom')) || 28;
+        const lift = lastProjectImage
+          ? Math.max(0, window.innerHeight - bottomInset - lastProjectImage.getBoundingClientRect().bottom)
+          : 0;
+        projectInfo.style.setProperty('--project-info-lift', lift + 'px');
+        const showInfo = Boolean(projectLead && projectLead.getBoundingClientRect().top <= 0);
+        projectInfo.classList.toggle('is-visible', showInfo);
+        projectInfo.setAttribute('aria-hidden', String(!showInfo));
+      }
+      ticking = false;
+    }
+
+    menuButton.addEventListener('click', () => setMenu(menuButton.getAttribute('aria-expanded') !== 'true'));
+    menuClose.addEventListener('click', () => setMenu(false));
+    menuBackdrop.addEventListener('click', () => setMenu(false));
+    sideMenu.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => setMenu(false)));
+    document.addEventListener('keydown', (event) => { if (event.key === 'Escape') setMenu(false); });
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -8% 0px' });
+    document.querySelectorAll('.reveal, .article-reveal').forEach((item) => revealObserver.observe(item));
+    window.addEventListener('scroll', () => {
+      if (!ticking) { requestAnimationFrame(updateScroll); ticking = true; }
+    }, { passive: true });
+    projectImages.forEach((image) => image.addEventListener('load', updateScroll));
+    window.addEventListener('resize', updateScroll, { passive: true });
+    updateLocalDateTime();
+    window.setInterval(updateLocalDateTime, 1000);
+    updateScroll();
+  </script>
+</body>
+</html>
+
