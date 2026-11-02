@@ -11,7 +11,20 @@
   <title>{{TITLE}} — Joshua Ngo</title>
   <link rel="stylesheet" href="style.css?v=45">
   <link rel="stylesheet" href="editorial.css?v=3">
-  <style>body.editorial-project .portfolio-sequence { padding-top: clamp(64px, 10vw, 140px); }</style>
+  <style>
+    body.editorial-project .article-masthead { padding: 36px var(--gutter) 32px; }
+    body.editorial-project .article-masthead h1 { margin: 12px auto; font-size: clamp(32px, 4vw, 54px); }
+    body.editorial-project .article-lead { display: flex; justify-content: center; max-width: 1100px; padding: 0 8vw; margin: 0 auto; }
+    body.editorial-project .article-lead img { width: auto; height: auto; max-width: 100%; max-height: min(58svh, 620px); object-fit: contain; }
+    body.editorial-project .portfolio-sequence { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: center; gap: clamp(96px, 14vw, 180px) clamp(36px, 7vw, 100px); max-width: 1120px; margin: 0 auto; padding: clamp(96px, 14vw, 180px) 7vw; }
+    body.editorial-project .portfolio-sequence .portfolio-sequence-image { grid-column: auto; width: 100%; margin: 0; padding: 0; display: flex; justify-content: center; background: transparent; overflow: visible; }
+    body.editorial-project .portfolio-sequence .portfolio-sequence-image img { display: block; width: auto; height: auto; max-width: 100%; max-height: min(62svh, 620px); object-fit: contain; }
+    @media (max-width: 600px) {
+      body.editorial-project .portfolio-sequence { grid-template-columns: 1fr; padding-inline: 9vw; gap: 90px; }
+      body.editorial-project .portfolio-sequence .portfolio-sequence-image img { max-height: 66svh; }
+      body.editorial-project .article-lead { padding-inline: 9vw; }
+    }
+  </style>
 </head>
 <body class="article-page editorial-page editorial-{{TYPE}}">
   <a class="skip-link" href="#content">Skip to content</a>
