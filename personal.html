@@ -7,14 +7,12 @@
   <meta property="og:title" content="Personal — Joshua Ngo">
   <meta property="og:description" content="Work In Progress">
   <meta property="og:type" content="website">
-  <title>Portfolio — Joshua Ngo</title>
+  <title>Personal — Joshua Ngo</title>
   <link rel="stylesheet" href="style.css?v=46">
   <script defer src="/site-interactions.js?v=1"></script>
 </head>
-<body class="personal-page">
+<body class="about-page">
   <a class="skip-link" href="#content">Skip to content</a>
-  <div class="scroll-progress" aria-hidden="true"></div>
-
   <header class="site-header" id="siteHeader">
     <a class="wordmark" href="index.html" aria-label="Joshua Ngo, home"><span>Joshua</span><span>Ngo</span></a>
     <p class="header-note" aria-label="Visitor local time"><span id="localTime"></span></p>
@@ -38,18 +36,14 @@
   </main>
 
   <footer class="site-footer"><p class="footer-brand">© 2026 Joshua Ngo</p></footer>
-  <a class="floating-top" id="floatingTop" href="#content" aria-label="Back to top"><span aria-hidden="true">↑</span></a>
 
   <script>
-    const root = document.documentElement;
     const header = document.getElementById('siteHeader');
     const menuButton = document.getElementById('menuButton');
     const menuClose = document.getElementById('menuClose');
     const menuBackdrop = document.getElementById('menuBackdrop');
     const sideMenu = document.getElementById('sideMenu');
-    const floatingTop = document.getElementById('floatingTop');
     const localTime = document.getElementById('localTime');
-    let ticking = false;
 
     function setMenu(open) {
       document.body.classList.toggle('menu-open', open);
@@ -62,16 +56,8 @@
     }
 
     function updateLocalDateTime() {
-      localTime.textContent = new Intl.DateTimeFormat(undefined, { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false }).format(new Date());
-    }
-
-    function updateScroll() {
-      const y = window.scrollY;
-      const max = document.documentElement.scrollHeight - window.innerHeight;
-      root.style.setProperty('--progress', max > 0 ? y / max : 0);
-      header.classList.toggle('is-compact', y > 40);
-      floatingTop.classList.toggle('is-visible', y > window.innerHeight * .55);
-      ticking = false;
+      const now = new Date();
+      localTime.textContent = new Intl.DateTimeFormat(undefined, { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false }).format(now);
     }
 
     menuButton.addEventListener('click', () => setMenu(menuButton.getAttribute('aria-expanded') !== 'true'));
@@ -79,12 +65,9 @@
     menuBackdrop.addEventListener('click', () => setMenu(false));
     sideMenu.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => setMenu(false)));
     document.addEventListener('keydown', (event) => { if (event.key === 'Escape') setMenu(false); });
-    window.addEventListener('scroll', () => {
-      if (!ticking) { requestAnimationFrame(updateScroll); ticking = true; }
-    }, { passive: true });
+    window.addEventListener('scroll', () => header.classList.toggle('is-compact', window.scrollY > 40), { passive: true });
     updateLocalDateTime();
     window.setInterval(updateLocalDateTime, 1000);
-    updateScroll();
   </script>
 </body>
 </html>
