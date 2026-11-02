@@ -10,7 +10,7 @@ topics: Interiors, Cafés
 photography: Joshua Ngo
 location: Seoul, South Korea
 client: Softer Volumes
-commission: Photographed for Softer Volumes: South Korea Guide
+commission: For Softer Volumes: South Korea Guide
 year: 2025
 excerpt: Mokki — photographs by Joshua Ngo for Softer Volumes.
 hero: images/mokki/dscf7318-1.jpg
