@@ -640,3 +640,5 @@ body { font-family: var(--sans); }
 /* Homepage alignment and slideshow counter. */
 .home-page .site-header .wordmark { left: var(--gutter); transform: none; display: flex; gap: .25em; white-space: nowrap; }
 .home-page .home-slide-counter { display: none; }
+
+.home-page .site-header.is-compact .wordmark { left: var(--gutter); transform: none; }
