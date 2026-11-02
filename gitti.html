@@ -131,7 +131,7 @@
     const floatingTop = document.getElementById('floatingTop');
     const localTime = document.getElementById('localTime');
     const projectInfo = document.getElementById('projectInfo');
-    const projectTitle = document.querySelector('.article-masthead h1');
+    const projectLead = document.querySelector('.article-lead img');
     const projectImages = Array.from(document.querySelectorAll('.article-lead img, .portfolio-sequence img'));
     const lastProjectImage = projectImages.at(-1);
     let ticking = false;
@@ -162,7 +162,7 @@
           ? Math.max(0, window.innerHeight - bottomInset - lastProjectImage.getBoundingClientRect().bottom)
           : 0;
         projectInfo.style.setProperty('--project-info-lift', lift + 'px');
-        const showInfo = !projectTitle || projectTitle.getBoundingClientRect().bottom < header.getBoundingClientRect().bottom;
+        const showInfo = Boolean(projectLead && projectLead.getBoundingClientRect().top <= 0);
         projectInfo.classList.toggle('is-visible', showInfo);
         projectInfo.setAttribute('aria-hidden', String(!showInfo));
       }
